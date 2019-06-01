@@ -29,6 +29,50 @@
 
 import UIKit
 
-struct CCGradientConfiguration {
+// MARK: - GradientType enum
+
+public enum CCGradientType {
+    case axial
+    case radial
+    case conic
+    
+    // MARK: - private
+    
+    fileprivate func toCAGradientLayerType() -> CAGradientLayerType {
+        switch self {
+        case .axial:
+            return .axial
+        case .radial:
+            return .radial
+        case .conic:
+            return .conic
+        }
+    }
+    
+    // MARK: - public methods
+    
+    public 
+}
+
+public struct CCGradientConfiguration {
+    internal let colors: [CGColor]
+    internal let points: [CGPoint]
+    internal let type: CCGradientType
+    
+    public convenience init(colors: [UIColor]) {
+        self.init(colors: colors, type: .axial)
+    }
+    
+    public init(colors: [UIColor],
+                type: CCGradientType) {
+        self.init(colors: colors, type: type, points: )
+    }
+    
+    public init(colors: [UIColor],
+                type: CCGradientType,
+                points: [CGPoint]) {
+        
+    }
+    
     
 }

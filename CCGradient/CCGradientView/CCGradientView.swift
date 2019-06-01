@@ -29,45 +29,10 @@
 
 import UIKit
 
-// MARK: - GradientType enum
-
-public enum CCGradientType {
-    case axial
-    case radial
-    case conic
-    
-    fileprivate func toCAGradientLayerType() -> CAGradientLayerType {
-        switch self {
-        case .axial:
-            return .axial
-        case .radial:
-            return .radial
-        case .conic:
-            return .conic
-        }
-    }
-}
-
 // MARK: - CCGradient configuration
 
-public protocol CCGradientBasicConfiguration: class {
-    func colors() -> [UIColor]
-}
-
-public protocol CCGradientAdvancedConfiguration: class {
-    func gradientType() -> CCGradientType
-    func points() -> [CGPoint]
-}
-
-extension CCGradientAdvancedConfiguration {
-    func gradientType() -> CCGradientType {
-        return .axial
-    }
-    
-    func points() -> [CGPoint] {
-        return [CGPoint(x: 0.5, y: 0.5),
-                CGPoint(x: 1, y: 1)]
-    }
+public protocol CCGradientViewConfiguration: class {
+    func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration
 }
 
 // MARK: - CCGradientView
@@ -80,8 +45,7 @@ public class CCGradientView: UIView {
     
     // MARK: - public properties
     
-    public weak var basicConfiguration: CCGradientBasicConfiguration?
-    public weak var advancedConfigurations: CCGradientAdvancedConfiguration?
+    public weak var configuration: CCGradientViewConfiguration?
     
     // MARK: - [initializer]s
     
