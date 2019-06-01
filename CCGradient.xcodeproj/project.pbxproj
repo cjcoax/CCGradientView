@@ -12,6 +12,8 @@
 		5F082C1F22A1040400C3DDCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F082C1D22A1040400C3DDCD /* Main.storyboard */; };
 		5F082C2122A1040600C3DDCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F082C2022A1040600C3DDCD /* Assets.xcassets */; };
 		5F082C2422A1040600C3DDCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F082C2222A1040600C3DDCD /* LaunchScreen.storyboard */; };
+		5F082C2E22A106BC00C3DDCD /* CCGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C2D22A106BC00C3DDCD /* CCGradientView.swift */; };
+		5F082C3522A2123C00C3DDCD /* CCGradientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		5F082C2022A1040600C3DDCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F082C2322A1040600C3DDCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F082C2522A1040600C3DDCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F082C2D22A106BC00C3DDCD /* CCGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGradientView.swift; sourceTree = "<group>"; };
+		5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGradientConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		5F082C1822A1040400C3DDCD /* CCGradient */ = {
 			isa = PBXGroup;
 			children = (
+				5F082C3122A211FE00C3DDCD /* CCGradientView */,
 				5F082C1922A1040400C3DDCD /* AppDelegate.swift */,
 				5F082C1B22A1040400C3DDCD /* ViewController.swift */,
 				5F082C1D22A1040400C3DDCD /* Main.storyboard */,
@@ -62,6 +67,15 @@
 				5F082C2522A1040600C3DDCD /* Info.plist */,
 			);
 			path = CCGradient;
+			sourceTree = "<group>";
+		};
+		5F082C3122A211FE00C3DDCD /* CCGradientView */ = {
+			isa = PBXGroup;
+			children = (
+				5F082C2D22A106BC00C3DDCD /* CCGradientView.swift */,
+				5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */,
+			);
+			path = CCGradientView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F082C2E22A106BC00C3DDCD /* CCGradientView.swift in Sources */,
+				5F082C3522A2123C00C3DDCD /* CCGradientConfiguration.swift in Sources */,
 				5F082C1C22A1040400C3DDCD /* ViewController.swift in Sources */,
 				5F082C1A22A1040400C3DDCD /* AppDelegate.swift in Sources */,
 			);
