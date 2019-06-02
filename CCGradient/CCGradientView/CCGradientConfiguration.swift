@@ -29,6 +29,17 @@
 
 import UIKit
 
+// MARK: - Gradient directions
+
+public enum CCGradientDirection {
+    case topToBottom
+    case leftToRight
+    case rightToLeft
+    case bottomToTop
+    case growFromCenter
+    case shrinkToCenter
+}
+
 // MARK: - GradientType enum
 
 public enum CCGradientType {
@@ -49,30 +60,114 @@ public enum CCGradientType {
         }
     }
     
-    // MARK: - public methods
-    
-    public 
 }
 
 public struct CCGradientConfiguration {
+    
+    // MARK: - internal properties
+    
     internal let colors: [CGColor]
     internal let points: [CGPoint]
-    internal let type: CCGradientType
+    internal let type: CAGradientLayerType
+    internal let locations: [NSNumber]
     
-    public convenience init(colors: [UIColor]) {
+    // MARK: - initializer[s]
+    
+    public init(colors: [UIColor]) {
         self.init(colors: colors, type: .axial)
     }
     
     public init(colors: [UIColor],
                 type: CCGradientType) {
-        self.init(colors: colors, type: type, points: )
+        self.init(colors: colors,
+                  type: type,
+                  locations: CCGradientConfiguration.getEvenlyDistributedLocationsForColors(colors.count))
     }
     
     public init(colors: [UIColor],
                 type: CCGradientType,
-                points: [CGPoint]) {
-        
+                locations: [NSNumber]) {
+        var startPoint: CGPoint
+        var endPoint: CGPoint
+        switch type {
+        case .axial:
+            startPoint = CGPoint(x: 0.0, y: 0.5)
+            endPoint = CGPoint(x: 1, y: 0.5)
+        case .radial:
+            startPoint = CGPoint(x: 0.5, y: 0.5)
+            endPoint = CGPoint(x: 1, y: 1.0)
+        case .conic:
+            startPoint = CGPoint(x: 0.0, y: 0.0)
+            endPoint = CGPoint(x: 1.0, y: 1.0)
+        }
+        self.init(colors: colors,
+                  type: type,
+                  locations: locations,
+                  points: [startPoint, endPoint])
     }
     
+    public init(colors: [UIColor],
+                direction: CCGradientDirection) {
+        self.init(colors: colors,
+                  direction: direction,
+                  locations: CCGradientConfiguration.getEvenlyDistributedLocationsForColors(colors.count))
+    }
+    
+    public init(colors: [UIColor],
+                direction: CCGradientDirection,
+                locations: [NSNumber]) {
+        var startPoint: CGPoint
+        var endPoint: CGPoint
+        var type: CCGradientType
+        switch direction {
+        case .topToBottom:
+            type = .axial
+            startPoint = CGPoint(x: 0.5, y: 0)
+            endPoint = CGPoint(x: 0.5, y: 1)
+        case .leftToRight:
+            type = .axial
+            startPoint = CGPoint(x: 0, y: 0.5)
+            endPoint = CGPoint(x: 1, y: 0.5)
+        case .rightToLeft:
+            type = .axial
+            startPoint = CGPoint(x: 1.0, y: 0.5)
+            endPoint = CGPoint(x: 0.0, y: 0.5)
+        case .bottomToTop:
+            type = .axial
+            startPoint = CGPoint(x: 0.5, y: 1)
+            endPoint = CGPoint(x: 0.5, y: 0)
+        case .growFromCenter:
+            type = .radial
+            startPoint = CGPoint(x: 0.5, y: 0.5)
+            endPoint = CGPoint(x: 0, y: 0)
+        case .shrinkToCenter:
+            type = .radial
+            startPoint = CGPoint(x: 1, y: 1)
+            endPoint = CGPoint(x: 0.5, y: 0.5)
+        }
+        self.init(colors: colors,
+                  type: type,
+                  locations: locations,
+                  points: [startPoint, endPoint])
+    }
+    
+    public init(colors: [UIColor],
+                type: CCGradientType,
+                locations: [NSNumber],
+                points: [CGPoint]) {
+        self.colors = colors.map{ $0.cgColor }
+        self.type = type.toCAGradientLayerType()
+        self.points = points
+        self.locations = locations
+    }
+    
+    // MARK: - private helpers
+    
+    static func getEvenlyDistributedLocationsForColors(_ colorCount: Int) -> [NSNumber] {
+        let locations = (0..<colorCount).map { (offset) -> NSNumber in
+            return NSNumber(floatLiteral: Double(offset) * 1.0/Double(colorCount))
+        }
+        return locations
+    }
     
 }

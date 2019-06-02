@@ -19,16 +19,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAK-WM-1OD" customClass="CCGradientView" customModule="CCGradient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="246" width="414" height="414"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UAK-WM-1OD" secondAttribute="height" multiplier="1:1" id="FMv-vp-927"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UAK-WM-1OD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Eq2-Ws-WVd"/>
-                            <constraint firstItem="UAK-WM-1OD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JTY-Xy-toF"/>
-                            <constraint firstItem="UAK-WM-1OD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Sn1-sG-ey6"/>
-                            <constraint firstItem="UAK-WM-1OD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="kT0-wl-73h"/>
+                            <constraint firstItem="UAK-WM-1OD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="1HB-Pg-eRs"/>
+                            <constraint firstItem="UAK-WM-1OD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XDy-q8-Vta"/>
+                            <constraint firstItem="UAK-WM-1OD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ogd-nX-DJq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

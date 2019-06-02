@@ -9,27 +9,44 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var gradientView: CCGradientView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gradientView.basicConfiguration = self
-        gradientView.advancedConfigurations = self
-    }
-
-}
-
-extension ViewController: CCGradientBasicConfiguration, CCGradientAdvancedConfiguration {
-    func colors() -> [UIColor] {
-        return [
-            UIColor(red: 247.0/255.0, green: 151.0/255.0, blue: 30.0/255.0, alpha: 1.0),
-            UIColor(red: 255.0/255.0, green: 210.0/255.0, blue: 0/255.0, alpha: 1.0)
-        ]
+        gradientView.configuration = self
+        //        gradientView.animateStartPoint()
     }
     
-    func points() -> [CGPoint] {
-        return [CGPoint(x: 0, y: 0.5), CGPoint(x: 1, y: 0.5)]
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        gradientView.layer.cornerRadius = min(gradientView.frame.width, gradientView.frame.height)/2.0
+        gradientView.layer.masksToBounds = true
+    }
+}
+
+extension ViewController: CCGradientViewConfiguration {
+    func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration {
+        
+        let colors = [CCColor.red,
+                      CCColor.yellow,
+                      CCColor.lime,
+                      CCColor.aqua,
+                      CCColor.blue,
+                      CCColor.magenta,
+                      CCColor.red]
+        let mult = 1.0/Double(colors.count)
+        var locations = [NSNumber]()
+        for i in 0..<(colors.count-1) {
+            locations.append(NSNumber(value: Double(i) * mult))
+        }
+
+        return CCGradientConfiguration(
+            colors: colors,
+            type: CCGradientType.conic,
+            locations: locations,
+            points: [CGPoint(x: 0.5, y: 0.5), CGPoint(x: 1, y: 1)])
     }
 }

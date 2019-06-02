@@ -35,6 +35,12 @@ public protocol CCGradientViewConfiguration: class {
     func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration
 }
 
+extension CCGradientViewConfiguration {
+    func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration {
+        return CCGradientViewConfigurationBuilder.defaultConfiguration
+    }
+}
+
 // MARK: - CCGradientView
 
 public class CCGradientView: UIView {
@@ -72,19 +78,32 @@ public class CCGradientView: UIView {
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        let colors = (basicConfiguration?.colors() ?? [UIColor.red, UIColor.blue]).map{ $0.cgColor }
-        gradientLayer.colors = colors
-        gradientLayer.type = (advancedConfigurations?.gradientType() ?? .axial).toCAGradientLayerType()
-        if let points = advancedConfigurations?.points() {
-            gradientLayer.startPoint = points[0]
-            gradientLayer.endPoint = points[1]
-        }
+        let configuration = self.configuration?.configurationForGradientView(self) ?? CCGradientViewConfigurationBuilder.defaultConfiguration
         
+        gradientLayer.colors = configuration.colors
+        gradientLayer.type = configuration.type
+        gradientLayer.startPoint = configuration.points[0]
+        gradientLayer.endPoint = configuration.points[1]
+        gradientLayer.locations = configuration.locations
+    }
+    
+    // MARK: - public functions for animating gradient
+    
+    /// Animates start point of the gradient
+    public func animateStartPoint() {
+        let startPointAnimation = CABasicAnimation(keyPath: "startPoint")
+        startPointAnimation.fromValue = gradientLayer.startPoint
+        let randomXDelta = CGFloat.random(in: 1...100)/100
+        let randomYDelta = CGFloat.random(in: 1...100)/100
+        startPointAnimation.toValue = CGPoint(x: gradientLayer.startPoint.x + randomXDelta,
+                                              y: gradientLayer.startPoint.y - randomYDelta)
+        startPointAnimation.duration = 20.0
+        gradientLayer.add(startPointAnimation, forKey: nil)
     }
     
     // MARK: - private functions
     
-    func addGradientLayer() {
+    private func addGradientLayer() {
         gradientLayer = CAGradientLayer()
         layer.addSublayer(gradientLayer)
     }
