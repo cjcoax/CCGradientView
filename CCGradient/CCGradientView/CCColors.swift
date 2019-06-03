@@ -178,4 +178,8 @@ struct CCColor {
     static let mintcream = UIColor(red: 0.9607843, green: 1.0, blue: 0.98039216, alpha: 1)
     static let lavender = UIColor(red: 0.9019608, green: 0.9019608, blue: 0.98039216, alpha: 1)
     static let palegoldenrod = UIColor(red: 0.93333334, green: 0.9098039, blue: 0.6666667, alpha: 1)
+    static let electricred = UIColor(red: 0.905882353, green: 0, blue: 0, alpha: 1)
+    static let canaryyellow = UIColor(red: 1, green: 0.937254902, blue: 0, alpha: 1)
+    static let lasallegreen = UIColor(red: 0, green: 0.505882353, blue: 0.121568627, alpha: 1)
+    static let patriarch = UIColor(red: 0.462745098, green: 0, blue: 0.537254902, alpha: 1)
 }

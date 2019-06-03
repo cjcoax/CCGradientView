@@ -18,11 +18,11 @@ class ViewController: UIViewController {
         
 //        gradientView.mask = label
         gradientView.configuration = self
-        gradientView.startAnimating()
-        
-        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { [weak self] (timer) in
-            self?.gradientView?.endAnimating()
-        }
+//        gradientView.startAnimating()
+//
+//        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { [weak self] (timer) in
+//            self?.gradientView?.endAnimating()
+//        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -34,7 +34,17 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: CCGradientViewConfiguration {
+    
     func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration {
-        return CCGradientViewConfigurationBuilder.configurationWithGradientColors(CCGradientColors.DanceToForget)
+//        return CCGradientViewConfigurationBuilder.configurationWithGradientColors(CCGradientColors.DanceToForget)
+        
+        let mult = 1.0/Double(CCGradientColors.ColorWheel.count)
+        var locations = [NSNumber]()
+        for i in 0..<(CCGradientColors.ColorWheel.count-1) {
+            locations.append(NSNumber(value: Double(i) * mult))
+        }
+        
+        return CCGradientConfiguration(colors: CCGradientColors.LGBT, direction: .topToBottom)
     }
+    
 }

@@ -3695,4 +3695,17 @@ struct CCGradientColors {
                 green: 0.7882353,
                 blue: 0.5882353,
                 alpha: 1.0)]
+    static let ColorWheel = [CCColor.red,
+                             CCColor.yellow,
+                             CCColor.lime,
+                             CCColor.aqua,
+                             CCColor.blue,
+                             CCColor.magenta,
+                             CCColor.red]
+    static let LGBT = [CCColor.electricred,
+                       CCColor.darkorange,
+                       CCColor.canaryyellow,
+                       CCColor.lasallegreen,
+                       CCColor.blue,
+                       CCColor.patriarch]
 }

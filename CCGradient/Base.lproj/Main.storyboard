@@ -19,8 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAK-WM-1OD" customClass="CCGradientView" customModule="CCGradient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="246" width="414" height="414"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UAK-WM-1OD" secondAttribute="height" multiplier="1:1" id="M4u-Od-PqJ"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xti-gZ-VRD">
                                 <rect key="frame" x="82.5" y="393" width="249" height="120"/>
@@ -31,12 +34,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UAK-WM-1OD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="23L-m0-BBM"/>
-                            <constraint firstItem="UAK-WM-1OD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3hc-a2-3qS"/>
-                            <constraint firstItem="xti-gZ-VRD" firstAttribute="centerY" secondItem="UAK-WM-1OD" secondAttribute="centerY" id="Cwb-m8-YqV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UAK-WM-1OD" secondAttribute="bottom" id="Fau-b3-X2X"/>
-                            <constraint firstItem="xti-gZ-VRD" firstAttribute="centerX" secondItem="UAK-WM-1OD" secondAttribute="centerX" id="bXU-x0-iFD"/>
-                            <constraint firstItem="UAK-WM-1OD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bgX-R5-7Gc"/>
+                            <constraint firstItem="xti-gZ-VRD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="GdM-XD-fR5"/>
+                            <constraint firstItem="UAK-WM-1OD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Kiz-qz-fH5"/>
+                            <constraint firstItem="UAK-WM-1OD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="QOW-xu-kQk"/>
+                            <constraint firstItem="xti-gZ-VRD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mWd-ta-UIx"/>
+                            <constraint firstItem="UAK-WM-1OD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yD5-Hw-7JF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

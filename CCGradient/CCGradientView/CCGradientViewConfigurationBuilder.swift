@@ -38,35 +38,13 @@ struct CCGradientViewConfigurationBuilder {
     }
     
     static let defaultConfiguration = CCGradientConfiguration(
-        colors: [UIColor(red: 0,
-                         green: 0,
-                         blue: 70.0/255.0,
-                         alpha: 1.0),
-                 UIColor(red: 28.0/255.0,
-                         green: 181.0/255.0,
-                         blue: 224/255.0,
-                         alpha: 1.0),
-        ],
+        colors: CCGradientColors.KokoCaramel,
         direction: .leftToRight)
     
     static var colorWheelConfiguration: CCGradientConfiguration {
-        let colors = [CCColor.red,
-                      CCColor.yellow,
-                      CCColor.lime,
-                      CCColor.aqua,
-                      CCColor.blue,
-                      CCColor.magenta,
-                      CCColor.red]
-        let mult = 1.0/Double(colors.count)
-        var locations = [NSNumber]()
-        for i in 0..<(colors.count-1) {
-            locations.append(NSNumber(value: Double(i) * mult))
-        }
-        
         return CCGradientConfiguration(
-            colors: colors,
+            colors: CCGradientColors.ColorWheel,
             type: CCGradientType.conic,
-            locations: locations,
             points: [CGPoint(x: 0.5, y: 0.5), CGPoint(x: 1, y: 1)])
     }
 }

@@ -97,7 +97,7 @@ public struct CCGradientConfiguration {
             startPoint = CGPoint(x: 0.5, y: 0.5)
             endPoint = CGPoint(x: 1, y: 1.0)
         case .conic:
-            startPoint = CGPoint(x: 0.0, y: 0.0)
+            startPoint = CGPoint(x: 0.5, y: 0.5)
             endPoint = CGPoint(x: 1.0, y: 1.0)
         }
         self.init(colors: colors,
@@ -149,6 +149,15 @@ public struct CCGradientConfiguration {
                   type: type,
                   locations: locations,
                   points: [startPoint, endPoint])
+    }
+    
+    public init(colors: [UIColor],
+                type: CCGradientType,
+                points: [CGPoint]) {
+        self.init(colors: colors,
+                  type: type,
+                  locations: CCGradientConfiguration.getEvenlyDistributedLocationsForColors(colors.count),
+                  points: points)
     }
     
     public init(colors: [UIColor],
