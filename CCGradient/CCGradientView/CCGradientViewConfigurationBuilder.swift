@@ -30,6 +30,13 @@
 import UIKit
 
 struct CCGradientViewConfigurationBuilder {
+    
+    static func configurationWithGradientColors(_ gradientColors: [UIColor]) -> CCGradientConfiguration {
+        return CCGradientConfiguration(
+            colors: gradientColors,
+            direction: .leftToRight)
+    }
+    
     static let defaultConfiguration = CCGradientConfiguration(
         colors: [UIColor(red: 0,
                          green: 0,

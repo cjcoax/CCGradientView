@@ -48,6 +48,7 @@ public class CCGradientView: UIView {
     // MARK: - private properties
     
     private var gradientLayer: CAGradientLayer!
+    private var shouldStopAnimation: Bool = false
     
     // MARK: - public properties
     
@@ -89,16 +90,15 @@ public class CCGradientView: UIView {
     
     // MARK: - public functions for animating gradient
     
-    /// Animates start point of the gradient
-    public func animateStartPoint() {
-        let startPointAnimation = CABasicAnimation(keyPath: "startPoint")
-        startPointAnimation.fromValue = gradientLayer.startPoint
-        let randomXDelta = CGFloat.random(in: 1...100)/100
-        let randomYDelta = CGFloat.random(in: 1...100)/100
-        startPointAnimation.toValue = CGPoint(x: gradientLayer.startPoint.x + randomXDelta,
-                                              y: gradientLayer.startPoint.y - randomYDelta)
-        startPointAnimation.duration = 20.0
-        gradientLayer.add(startPointAnimation, forKey: nil)
+    // basic start/end point animations
+    
+    public func startAnimating() {
+        beginStartPointAnimation()
+        beginEndPointAnimation()
+    }
+    
+    public func endAnimating() {
+        shouldStopAnimation = true
     }
     
     // MARK: - private functions
@@ -106,5 +106,65 @@ public class CCGradientView: UIView {
     private func addGradientLayer() {
         gradientLayer = CAGradientLayer()
         layer.addSublayer(gradientLayer)
+    }
+    
+    private func beginStartPointAnimation() {
+        let startPointAnimation = CABasicAnimation(keyPath: "startPoint")
+        startPointAnimation.fromValue = gradientLayer.startPoint
+        let startSignX: CGFloat = Int.random(in: 0...1)%2 == 0 ? -1 : 1
+        let startSignY: CGFloat = Int.random(in: 0...1)%2 == 0 ? -1 : 1
+        let startRandomXDelta = CGFloat.random(in: 1...100)/1000
+        let startRandomYDelta = CGFloat.random(in: 1...100)/1000
+        let startNewX = max(min(gradientLayer.startPoint.x + startRandomXDelta * startSignX, 1),0)
+        let startNewY = max(min(gradientLayer.startPoint.y + startRandomYDelta * startSignY, 1),0)
+        startPointAnimation.toValue = CGPoint(x: startNewX,
+                                              y: startNewY)
+        startPointAnimation.setValue(beginStartPointAnimation, forKey: "callback")
+        startPointAnimation.duration = 10.0
+        startPointAnimation.delegate = self
+        
+        gradientLayer.add(startPointAnimation, forKey: nil)
+    }
+    
+    private func beginEndPointAnimation() {
+        let endPointAnimation = CABasicAnimation(keyPath: "endPoint")
+        endPointAnimation.fromValue = gradientLayer.endPoint
+        let endSignX: CGFloat = Int.random(in: 0...1)%2 == 0 ? -1 : 1
+        let endSignY: CGFloat = Int.random(in: 0...1)%2 == 0 ? -1 : 1
+        let endRandomXDelta = CGFloat.random(in: 1...100)/1000
+        let endRandomYDelta = CGFloat.random(in: 1...100)/1000
+        let endNewX = max(min(gradientLayer.endPoint.x + endRandomXDelta * endSignX, 1),0)
+        let endNewY = max(min(gradientLayer.endPoint.y + endRandomYDelta * endSignY, 1),0)
+        endPointAnimation.toValue = CGPoint(x: endNewX,
+                                            y: endNewY)
+        endPointAnimation.setValue(beginEndPointAnimation, forKey: "callback")
+        endPointAnimation.duration = 10.0
+        endPointAnimation.delegate = self
+        
+        gradientLayer.add(endPointAnimation, forKey: nil)
+    }
+}
+
+// MARK: - CAAnimationDelegate
+
+extension CCGradientView: CAAnimationDelegate {
+    public func animationDidStop(_ anim: CAAnimation,
+                          finished flag: Bool) {
+        guard let anim = anim as? CABasicAnimation else {
+            return
+        }
+        guard let callback = anim.value(forKey: "callback") as? (() -> Void),
+            let keyPath = anim.keyPath else {
+            return
+        }
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        gradientLayer.setValue(anim.toValue, forKey: keyPath)
+        CATransaction.commit()
+        
+        guard !shouldStopAnimation else {
+            return
+        }
+        callback()
     }
 }

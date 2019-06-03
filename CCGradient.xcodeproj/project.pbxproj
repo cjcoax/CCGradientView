@@ -16,6 +16,7 @@
 		5F082C3522A2123C00C3DDCD /* CCGradientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */; };
 		5F318A9E22A3943B007D7991 /* CCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F318A9D22A3943B007D7991 /* CCColors.swift */; };
 		5F7EB05F22A23C59008B0438 /* CCGradientViewConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7EB05E22A23C59008B0438 /* CCGradientViewConfigurationBuilder.swift */; };
+		5FED208122A3A8DA00CA7F70 /* CCGradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FED208022A3A8DA00CA7F70 /* CCGradientColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGradientConfiguration.swift; sourceTree = "<group>"; };
 		5F318A9D22A3943B007D7991 /* CCColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCColors.swift; sourceTree = "<group>"; };
 		5F7EB05E22A23C59008B0438 /* CCGradientViewConfigurationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGradientViewConfigurationBuilder.swift; sourceTree = "<group>"; };
+		5FED208022A3A8DA00CA7F70 /* CCGradientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCGradientColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		5F082C3122A211FE00C3DDCD /* CCGradientView */ = {
 			isa = PBXGroup;
 			children = (
+				5FED208022A3A8DA00CA7F70 /* CCGradientColors.swift */,
 				5F082C2D22A106BC00C3DDCD /* CCGradientView.swift */,
 				5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */,
 				5F7EB05E22A23C59008B0438 /* CCGradientViewConfigurationBuilder.swift */,
@@ -158,6 +161,7 @@
 				5F082C2E22A106BC00C3DDCD /* CCGradientView.swift in Sources */,
 				5F318A9E22A3943B007D7991 /* CCColors.swift in Sources */,
 				5F082C3522A2123C00C3DDCD /* CCGradientConfiguration.swift in Sources */,
+				5FED208122A3A8DA00CA7F70 /* CCGradientColors.swift in Sources */,
 				5F7EB05F22A23C59008B0438 /* CCGradientViewConfigurationBuilder.swift in Sources */,
 				5F082C1C22A1040400C3DDCD /* ViewController.swift in Sources */,
 				5F082C1A22A1040400C3DDCD /* AppDelegate.swift in Sources */,
