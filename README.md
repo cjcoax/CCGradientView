@@ -20,7 +20,7 @@ You can create configuration object using one the following ways:
 
 1. Only uses colors, it'll automatically adjust "Locations" and "Points" based on number of colors. Default type will be axial
 
-```
+```swift
 let configWithColors = CCGradientConfiguration(colors: [UIColors])
 ```
 </p>
@@ -29,16 +29,16 @@ let configWithColors = CCGradientConfiguration(colors: [UIColors])
 
 2. Same as above, it also takes CCGradient type which coule be "axial","radial", or "conic"
 
-```
+```swift
 let configWithColorsAndType = CCGradientConfiguration(colors: [UIColors],
-                                                        type: CCGradientType)
+                                                      type: CCGradientType)
 ```
 </p>
 <p>
 
 3. Same as above, it also takes locations which indicates area covered by each color. Each number on the array could be between 0 to 1, e.g. a gradient with two colors and locations = [0.25, 0.75] renders a gradient that has two colors, one of them covers 25% of view, the other 75%.
 
-```
+```swift
 let configWithColorsAndTypeAndLocations = CCGradientConfiguration(colors: [UIColor],
                                                                   type: CCGradientType,
                                                                   locations: [CGFloat])
@@ -47,7 +47,7 @@ let configWithColorsAndTypeAndLocations = CCGradientConfiguration(colors: [UICol
 <p>
 
 4. Same as above, it takes points array in addition to other parameters. This array needs to have two CGPoints and defined in a unit coordinate space (between [0,0] bottom left, [1,1] top right).
-```
+```swift
 let configWithColorsAndTypeAndLocationsAndPoints = CCGradientConfiguration(colors: [UIColor],
                                                                            type: CCGradientType ,
                                                                            locations: [CGFloat],
@@ -58,27 +58,28 @@ let configWithColorsAndTypeAndLocationsAndPoints = CCGradientConfiguration(color
 <p>
 
 5. Uses array of colors, plus `CCGradientDirection` which is one of the followings:
-```
+```swift
 public enum CCGradientDirection {
-case topToBottom
-case leftToRight
-case rightToLeft
-case bottomToTop
-case growFromCenter
-case shrinkToCenter
+    case topToBottom
+    case leftToRight
+    case rightToLeft
+    case bottomToTop
+    case growFromCenter
+    case shrinkToCenter
 }
 ``` 
 `topToBottom`, `case leftToRight`, `rightToLeft`, `bottomToTop` use `axial` type, `growFromCenter` and `shrinkToCenter` use `radial`.
 
-```
-let configWithColorsAndDirection = CCGradientConfiguration(colors: [UIColors], direction: CCGradientDirection)
+```swift
+let configWithColorsAndDirection = CCGradientConfiguration(colors: [UIColors], 
+                                                           direction: CCGradientDirection)
 ```
 </p>
 <p>
 
 6. Same as above, it takes locations array too.
 
-```
+```swift
 let configWithColorsAndDirectionAndLocations = CCGradientConfiguration(colors: [UIColor],
                                                                        direction: CCGradientDirection,
                                                                        locations: [CGFloat])
@@ -116,7 +117,7 @@ Credit to [Ghosh](https://github.com/Ghosh)
 
 To use one of the ready gradient colors, you only need to [create a configuration](#create-configuration). For the color array you need to pass in one of the ready colors from `CCGradientColors` 
 
-```
+```swift
 let configuration = CCGradientConfiguration(colors: CCGradientColors.MoonPurple)
 ```
 Again, you can see most of the gradient colors in here: https://uigradients.com
@@ -129,7 +130,7 @@ You can play with configuration and get things like color wheel.
 <img src="http://i.imgur.com/kq4Cut6.png" alt="color-wheel" width="300" height="300"/>
 </p>
 
-```
+```swift
 CCGradientConfiguration(colors: CCGradientColors.ColorWheel,
                         type: CCGradientType.conic,
                         points: [CGPoint(x: 0.5, y: 0.5),
@@ -141,7 +142,7 @@ Or you can mask gradient views to get effects like following.
 <img src="http://i.imgur.com/wYDUEVw.png" alt="pride" width="300"/>
 </p>
 
-```
+```swift
 class ViewController: UIViewController {
     @IBOutlet weak var gradientView: CCGradientView!
     @IBOutlet weak var label: UILabel!
@@ -150,7 +151,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         gradientView.mask = label
         gradientView.configuration = self
-        }
+    }
 }
 
 extension ViewController: CCGradientViewConfiguration {
