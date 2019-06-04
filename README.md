@@ -175,7 +175,7 @@ extension ViewController: CCGradientViewConfiguration {
 
 ### Manual
 <p>
-You can drag and drop necessary files under `CCGradientView` folder into your project.
+You can drag and drop necessary files under `Sources` folder into your project.
 
 - `CCGradientView.swift` - Mandatory
 - `CCGradientConfiguration.swift` - Mandatory
@@ -185,6 +185,8 @@ You can drag and drop necessary files under `CCGradientView` folder into your pr
 
 ### Cocoapods
 <p>
+
+```
 
 </p>
 
