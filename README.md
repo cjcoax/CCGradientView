@@ -214,8 +214,8 @@ import CCGradient
 
 
 ## In Progress
-* Ability to animate Gradient
-* More ready to use colors to come
+* Ability to animate gradient locations and colors.
+* More ready to use colors to come.
 
 
 ## License
