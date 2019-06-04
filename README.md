@@ -68,7 +68,7 @@ public enum CCGradientDirection {
     case shrinkToCenter
 }
 ``` 
-`topToBottom`, `case leftToRight`, `rightToLeft`, `bottomToTop` use `axial` type, `growFromCenter` and `shrinkToCenter` use `radial`.
+and intialize CCGradientConfiguration using it.
 
 ```swift
 let configWithColorsAndDirection = CCGradientConfiguration(colors: [UIColors], 
