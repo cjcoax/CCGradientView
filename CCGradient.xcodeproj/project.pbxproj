@@ -10,8 +10,6 @@
 		5F082C1A22A1040400C3DDCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C1922A1040400C3DDCD /* AppDelegate.swift */; };
 		5F082C1C22A1040400C3DDCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C1B22A1040400C3DDCD /* ViewController.swift */; };
 		5F082C1F22A1040400C3DDCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F082C1D22A1040400C3DDCD /* Main.storyboard */; };
-		5F082C2122A1040600C3DDCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F082C2022A1040600C3DDCD /* Assets.xcassets */; };
-		5F082C2422A1040600C3DDCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F082C2222A1040600C3DDCD /* LaunchScreen.storyboard */; };
 		5F082C2E22A106BC00C3DDCD /* CCGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C2D22A106BC00C3DDCD /* CCGradientView.swift */; };
 		5F082C3522A2123C00C3DDCD /* CCGradientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */; };
 		5F318A9E22A3943B007D7991 /* CCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F318A9D22A3943B007D7991 /* CCColors.swift */; };
@@ -24,8 +22,6 @@
 		5F082C1922A1040400C3DDCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F082C1B22A1040400C3DDCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F082C1E22A1040400C3DDCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5F082C2022A1040600C3DDCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5F082C2322A1040600C3DDCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F082C2522A1040600C3DDCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F082C2D22A106BC00C3DDCD /* CCGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGradientView.swift; sourceTree = "<group>"; };
 		5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGradientConfiguration.swift; sourceTree = "<group>"; };
@@ -69,8 +65,6 @@
 				5F082C1922A1040400C3DDCD /* AppDelegate.swift */,
 				5F082C1B22A1040400C3DDCD /* ViewController.swift */,
 				5F082C1D22A1040400C3DDCD /* Main.storyboard */,
-				5F082C2022A1040600C3DDCD /* Assets.xcassets */,
-				5F082C2222A1040600C3DDCD /* LaunchScreen.storyboard */,
 				5F082C2522A1040600C3DDCD /* Info.plist */,
 			);
 			path = CCGradient;
@@ -153,9 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F082C2422A1040600C3DDCD /* LaunchScreen.storyboard in Resources */,
 				5FC59E5F22A63747006664CA /* Rodina-Regular.otf in Resources */,
-				5F082C2122A1040600C3DDCD /* Assets.xcassets in Resources */,
 				5F082C1F22A1040400C3DDCD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,14 +177,6 @@
 				5F082C1E22A1040400C3DDCD /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5F082C2222A1040600C3DDCD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5F082C2322A1040600C3DDCD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -317,7 +301,6 @@
 		5F082C2922A1040600C3DDCD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CGAD6SU433;
 				INFOPLIST_FILE = CCGradient/Info.plist;
@@ -335,7 +318,6 @@
 		5F082C2A22A1040600C3DDCD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CGAD6SU433;
 				INFOPLIST_FILE = CCGradient/Info.plist;

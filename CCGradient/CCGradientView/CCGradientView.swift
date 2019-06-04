@@ -37,7 +37,7 @@ public protocol CCGradientViewConfiguration: class {
 
 extension CCGradientViewConfiguration {
     func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration {
-        return CCGradientViewConfigurationBuilder.defaultConfiguration
+        return CCGradientConfiguration(colors: CCGradientColors.Bluelagoo)
     }
 }
 
@@ -79,7 +79,7 @@ public class CCGradientView: UIView {
     public override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        let configuration = self.configuration?.configurationForGradientView(self) ?? CCGradientViewConfigurationBuilder.defaultConfiguration
+        let configuration = self.configuration?.configurationForGradientView(self) ?? CCGradientConfiguration(colors: CCGradientColors.Bluelagoo)
         
         gradientLayer.colors = configuration.colors
         gradientLayer.type = configuration.type
