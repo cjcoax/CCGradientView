@@ -213,6 +213,10 @@ import CCGradient
 </p>
 
 
+## In Progress
+* Ability to animate Gradient
+* More ready to use colors to come
+
 
 ## License
 
