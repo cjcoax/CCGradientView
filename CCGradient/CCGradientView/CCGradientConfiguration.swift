@@ -74,11 +74,13 @@ public struct CCGradientConfiguration {
     // MARK: - initializer[s]
     
     public init(colors: [UIColor]) {
+        
         self.init(colors: colors, type: .axial)
     }
     
     public init(colors: [UIColor],
                 type: CCGradientType) {
+        
         self.init(colors: colors,
                   type: type,
                   locations: CCGradientConfiguration.getEvenlyDistributedLocationsForColors(colors.count))
@@ -86,7 +88,8 @@ public struct CCGradientConfiguration {
     
     public init(colors: [UIColor],
                 type: CCGradientType,
-                locations: [NSNumber]) {
+                locations: [CGFloat]) {
+        
         var startPoint: CGPoint
         var endPoint: CGPoint
         switch type {
@@ -108,6 +111,7 @@ public struct CCGradientConfiguration {
     
     public init(colors: [UIColor],
                 direction: CCGradientDirection) {
+        
         self.init(colors: colors,
                   direction: direction,
                   locations: CCGradientConfiguration.getEvenlyDistributedLocationsForColors(colors.count))
@@ -115,7 +119,8 @@ public struct CCGradientConfiguration {
     
     public init(colors: [UIColor],
                 direction: CCGradientDirection,
-                locations: [NSNumber]) {
+                locations: [CGFloat]) {
+        
         var startPoint: CGPoint
         var endPoint: CGPoint
         var type: CCGradientType
@@ -154,6 +159,8 @@ public struct CCGradientConfiguration {
     public init(colors: [UIColor],
                 type: CCGradientType,
                 points: [CGPoint]) {
+        
+        assert(points.count == 2, "points array needs to have exactly 2 items")
         self.init(colors: colors,
                   type: type,
                   locations: CCGradientConfiguration.getEvenlyDistributedLocationsForColors(colors.count),
@@ -162,19 +169,22 @@ public struct CCGradientConfiguration {
     
     public init(colors: [UIColor],
                 type: CCGradientType,
-                locations: [NSNumber],
+                locations: [CGFloat],
                 points: [CGPoint]) {
+        
+        assert(points.count == 2, "points array needs to have exactly 2 items")
         self.colors = colors.map{ $0.cgColor }
         self.type = type.toCAGradientLayerType()
         self.points = points
-        self.locations = locations
+        self.locations = locations.map{ NSNumber(value: Double($0)) }
     }
     
     // MARK: - private helpers
     
-    static func getEvenlyDistributedLocationsForColors(_ colorCount: Int) -> [NSNumber] {
-        let locations = (0..<colorCount).map { (offset) -> NSNumber in
-            return NSNumber(floatLiteral: Double(offset) * 1.0/Double(colorCount))
+    static func getEvenlyDistributedLocationsForColors(_ colorCount: Int) -> [CGFloat] {
+        
+        let locations = (0..<colorCount).map { (offset) -> CGFloat in
+            return CGFloat(Double(offset) * 1.0/Double(colorCount))
         }
         return locations
     }

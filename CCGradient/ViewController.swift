@@ -20,30 +20,32 @@ class ViewController: UIViewController {
         gradientView.mask = label
         gradientView.configuration = self
         backgroundView.configuration = self
-//        gradientView.startAnimating()
-//
-//        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { [weak self] (timer) in
-//            self?.gradientView?.endAnimating()
-//        }
+        
+        //        gradientView.startAnimating()
+        //
+        //        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { [weak self] (timer) in
+        //            self?.gradientView?.endAnimating()
+        //        }
+        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-//        gradientView.layer.cornerRadius = min(gradientView.frame.width, gradientView.frame.height)/2.0
-//        gradientView.layer.masksToBounds = true
+                gradientView.layer.cornerRadius = min(gradientView.frame.width, gradientView.frame.height)/2.0
+                gradientView.layer.masksToBounds = true
     }
 }
 
 extension ViewController: CCGradientViewConfiguration {
     
     func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration {
-//        return CCGradientViewConfigurationBuilder.configurationWithGradientColors(CCGradientColors.DanceToForget)
         if gradientView == self.gradientView {
-            return CCGradientConfiguration(colors: CCGradientColors.ShadesofGrey,
-            direction: .rightToLeft)
+            return CCGradientConfiguration(colors: CCGradientColors.LGBT)
         }
-        return CCGradientViewConfigurationBuilder.configurationWithGradientColors(CCGradientColors.Instagram)
+        
+        
+        return CCGradientConfiguration(colors: CCGradientColors.MoonPurple)
     }
     
 }
