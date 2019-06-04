@@ -31,7 +31,7 @@ let configWithColors = CCGradientConfiguration(colors: [UIColors])
 
 ```
 let configWithColorsAndType = CCGradientConfiguration(colors: [UIColors],
-type: CCGradientType)
+                                                        type: CCGradientType)
 ```
 </p>
 <p>
@@ -40,8 +40,8 @@ type: CCGradientType)
 
 ```
 let configWithColorsAndTypeAndLocations = CCGradientConfiguration(colors: [UIColor],
-type: CCGradientType,
-locations: [CGFloat])
+                                                                  type: CCGradientType,
+                                                                  locations: [CGFloat])
 ```
 </p>
 <p>
@@ -49,9 +49,9 @@ locations: [CGFloat])
 4. Same as above, it takes points array in addition to other parameters. This array needs to have two CGPoints and defined in a unit coordinate space (between [0,0] bottom left, [1,1] top right).
 ```
 let configWithColorsAndTypeAndLocationsAndPoints = CCGradientConfiguration(colors: [UIColor],
-type: CCGradientType ,
-locations: [CGFloat],
-points: [CGPoint])
+                                                                           type: CCGradientType ,
+                                                                           locations: [CGFloat],
+                                                                           points: [CGPoint])
 
 ```
 </p>
@@ -80,8 +80,8 @@ let configWithColorsAndDirection = CCGradientConfiguration(colors: [UIColors], d
 
 ```
 let configWithColorsAndDirectionAndLocations = CCGradientConfiguration(colors: [UIColor],
-direction: CCGradientDirection,
-locations: [CGFloat])
+                                                                       direction: CCGradientDirection,
+                                                                       locations: [CGFloat])
 ```
 </p>
 
@@ -92,19 +92,19 @@ locations: [CGFloat])
 
 ```swift
 class ViewController: UIViewController {
-@IBOutlet weak var gradientView: CCGradientView!
+    @IBOutlet weak var gradientView: CCGradientView!
 
-override func viewDidLoad() {
-super.viewDidLoad()
-//set configuration to be self
-gradientView.configuration = self
-}
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //set configuration to be self
+        gradientView.configuration = self
+    }
 }
 extension ViewController: CCGradientViewConfiguration {    
-func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration {
-return CCGradientConfiguration(colors: CCGradientColors.Instagram,
-direction: .rightToLeft)
-}
+    func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration {
+        return CCGradientConfiguration(colors: CCGradientColors.Instagram,
+                                       direction: .rightToLeft)
+    }
 }
 ```
 <p>
@@ -131,9 +131,9 @@ You can play with configuration and get things like color wheel.
 
 ```
 CCGradientConfiguration(colors: CCGradientColors.ColorWheel,
-type: CCGradientType.conic,
-points: [CGPoint(x: 0.5, y: 0.5),
-CGPoint(x: 1, y: 1)])
+                        type: CCGradientType.conic,
+                        points: [CGPoint(x: 0.5, y: 0.5),
+                        CGPoint(x: 1, y: 1)])
 ```
 
 Or you can mask gradient views to get effects like following.
@@ -143,20 +143,20 @@ Or you can mask gradient views to get effects like following.
 
 ```
 class ViewController: UIViewController {
-@IBOutlet weak var gradientView: CCGradientView!
-@IBOutlet weak var label: UILabel!
+    @IBOutlet weak var gradientView: CCGradientView!
+    @IBOutlet weak var label: UILabel!
 
-override func viewDidLoad() {
-super.viewDidLoad()
-gradientView.mask = label
-gradientView.configuration = self
-}
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        gradientView.mask = label
+        gradientView.configuration = self
+        }
 }
 
 extension ViewController: CCGradientViewConfiguration {
-func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration {
-return CCGradientConfiguration(colors: CCGradientColors.LGBT)
-}
+    func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration {
+        return CCGradientConfiguration(colors: CCGradientColors.LGBT)
+    }
 }
 ```
 
