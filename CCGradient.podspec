@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/cjcoax/CCGradientView'
   spec.authors      = { 'Amir Rezvani' => 'a.h.rezvani@gmail.com' }
-  spec.summary      = 'Lightweight, easy to use Gradient view backed by GPU powered CoreAnimation\'s Layer, with 380+ built-in gradient colors, mostly ported from uigradients'
+  spec.summary      = 'Lightweight, easy to use Gradient'
   spec.source       = { :git => 'https://github.com/cjcoax/CCGradientView.git', :tag => spec.version }
   spec.source_files = 'Sources/*.swift'
 
