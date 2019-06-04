@@ -173,23 +173,49 @@ extension ViewController: CCGradientViewConfiguration {
 
 ## Installation
 
+
+
 ### Manual
+
 <p>
+
 You can drag and drop necessary files under `Sources` folder into your project.
 
-- `CCGradientView.swift` - Mandatory
-- `CCGradientConfiguration.swift` - Mandatory
+
+
+-  `CCGradientView.swift` - Mandatory
+
+-  `CCGradientConfiguration.swift` - Mandatory
+
 - `CCGradientColors.swift` - Optional, it contains all builtin gradient colors
+
 - `CCColors.swift` - Optional, it contains CSS color names and is used in `CCGradientColors.swift`, so if you use `CCGradientColors.swift` you need this file too.
+
 </p>
+
+
 
 ### Cocoapods
+```ruby
+target 'MyApp' do
+pod 'CCGradient', '~> 1.0'
+end
+```
+and import `CCGradient` when you want to use CCGradientView.
+
+```swift
+import CCGradient
+```
 <p>
 
-```
+
 
 </p>
 
+
+
 ## License
+
+
 
 [MIT License](http://opensource.org/licenses/mit-license.php).
