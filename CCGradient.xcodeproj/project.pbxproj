@@ -10,11 +10,11 @@
 		5F082C1A22A1040400C3DDCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C1922A1040400C3DDCD /* AppDelegate.swift */; };
 		5F082C1C22A1040400C3DDCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C1B22A1040400C3DDCD /* ViewController.swift */; };
 		5F082C1F22A1040400C3DDCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F082C1D22A1040400C3DDCD /* Main.storyboard */; };
-		5F082C2E22A106BC00C3DDCD /* CCGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C2D22A106BC00C3DDCD /* CCGradientView.swift */; };
-		5F082C3522A2123C00C3DDCD /* CCGradientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */; };
-		5F318A9E22A3943B007D7991 /* CCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F318A9D22A3943B007D7991 /* CCColors.swift */; };
 		5FC59E5F22A63747006664CA /* Rodina-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5FC59E5E22A63747006664CA /* Rodina-Regular.otf */; };
-		5FED208122A3A8DA00CA7F70 /* CCGradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FED208022A3A8DA00CA7F70 /* CCGradientColors.swift */; };
+		5FC59EAA22A71DC9006664CA /* CCGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC59EA622A71DC9006664CA /* CCGradientView.swift */; };
+		5FC59EAB22A71DC9006664CA /* CCGradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC59EA722A71DC9006664CA /* CCGradientColors.swift */; };
+		5FC59EAC22A71DC9006664CA /* CCGradientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC59EA822A71DC9006664CA /* CCGradientConfiguration.swift */; };
+		5FC59EAD22A71DC9006664CA /* CCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC59EA922A71DC9006664CA /* CCColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +23,11 @@
 		5F082C1B22A1040400C3DDCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F082C1E22A1040400C3DDCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F082C2522A1040600C3DDCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F082C2D22A106BC00C3DDCD /* CCGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGradientView.swift; sourceTree = "<group>"; };
-		5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGradientConfiguration.swift; sourceTree = "<group>"; };
-		5F318A9D22A3943B007D7991 /* CCColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCColors.swift; sourceTree = "<group>"; };
 		5FC59E5E22A63747006664CA /* Rodina-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rodina-Regular.otf"; sourceTree = "<group>"; };
-		5FED208022A3A8DA00CA7F70 /* CCGradientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCGradientColors.swift; sourceTree = "<group>"; };
+		5FC59EA622A71DC9006664CA /* CCGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCGradientView.swift; sourceTree = "<group>"; };
+		5FC59EA722A71DC9006664CA /* CCGradientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCGradientColors.swift; sourceTree = "<group>"; };
+		5FC59EA822A71DC9006664CA /* CCGradientConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCGradientConfiguration.swift; sourceTree = "<group>"; };
+		5FC59EA922A71DC9006664CA /* CCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 		5F082C1822A1040400C3DDCD /* CCGradient */ = {
 			isa = PBXGroup;
 			children = (
+				5FC59EA522A71D6E006664CA /* Sources */,
 				5FC59E5B22A6360A006664CA /* Fonts */,
-				5F082C3122A211FE00C3DDCD /* CCGradientView */,
 				5F082C1922A1040400C3DDCD /* AppDelegate.swift */,
 				5F082C1B22A1040400C3DDCD /* ViewController.swift */,
 				5F082C1D22A1040400C3DDCD /* Main.storyboard */,
@@ -70,23 +70,24 @@
 			path = CCGradient;
 			sourceTree = "<group>";
 		};
-		5F082C3122A211FE00C3DDCD /* CCGradientView */ = {
-			isa = PBXGroup;
-			children = (
-				5FED208022A3A8DA00CA7F70 /* CCGradientColors.swift */,
-				5F082C2D22A106BC00C3DDCD /* CCGradientView.swift */,
-				5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */,
-				5F318A9D22A3943B007D7991 /* CCColors.swift */,
-			);
-			path = CCGradientView;
-			sourceTree = "<group>";
-		};
 		5FC59E5B22A6360A006664CA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				5FC59E5E22A63747006664CA /* Rodina-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5FC59EA522A71D6E006664CA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5FC59EA922A71DC9006664CA /* CCColors.swift */,
+				5FC59EA722A71DC9006664CA /* CCGradientColors.swift */,
+				5FC59EA822A71DC9006664CA /* CCGradientConfiguration.swift */,
+				5FC59EA622A71DC9006664CA /* CCGradientView.swift */,
+			);
+			name = Sources;
+			path = ../Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,12 +160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F082C2E22A106BC00C3DDCD /* CCGradientView.swift in Sources */,
-				5F318A9E22A3943B007D7991 /* CCColors.swift in Sources */,
-				5F082C3522A2123C00C3DDCD /* CCGradientConfiguration.swift in Sources */,
-				5FED208122A3A8DA00CA7F70 /* CCGradientColors.swift in Sources */,
+				5FC59EAA22A71DC9006664CA /* CCGradientView.swift in Sources */,
+				5FC59EAD22A71DC9006664CA /* CCColors.swift in Sources */,
 				5F082C1C22A1040400C3DDCD /* ViewController.swift in Sources */,
+				5FC59EAC22A71DC9006664CA /* CCGradientConfiguration.swift in Sources */,
 				5F082C1A22A1040400C3DDCD /* AppDelegate.swift in Sources */,
+				5FC59EAB22A71DC9006664CA /* CCGradientColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
