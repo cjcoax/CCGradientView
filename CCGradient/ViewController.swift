@@ -12,12 +12,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var gradientView: CCGradientView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var backgroundView: CCGradientView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        gradientView.mask = label
+        gradientView.mask = label
         gradientView.configuration = self
+        backgroundView.configuration = self
 //        gradientView.startAnimating()
 //
 //        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { [weak self] (timer) in
@@ -37,14 +39,11 @@ extension ViewController: CCGradientViewConfiguration {
     
     func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration {
 //        return CCGradientViewConfigurationBuilder.configurationWithGradientColors(CCGradientColors.DanceToForget)
-        
-        let mult = 1.0/Double(CCGradientColors.ColorWheel.count)
-        var locations = [NSNumber]()
-        for i in 0..<(CCGradientColors.ColorWheel.count-1) {
-            locations.append(NSNumber(value: Double(i) * mult))
+        if gradientView == self.gradientView {
+            return CCGradientConfiguration(colors: CCGradientColors.ShadesofGrey,
+            direction: .rightToLeft)
         }
-        
-        return CCGradientConfiguration(colors: CCGradientColors.LGBT, direction: .topToBottom)
+        return CCGradientViewConfigurationBuilder.configurationWithGradientColors(CCGradientColors.Instagram)
     }
     
 }

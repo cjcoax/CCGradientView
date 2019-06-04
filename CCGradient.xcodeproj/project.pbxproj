@@ -16,6 +16,7 @@
 		5F082C3522A2123C00C3DDCD /* CCGradientConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */; };
 		5F318A9E22A3943B007D7991 /* CCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F318A9D22A3943B007D7991 /* CCColors.swift */; };
 		5F7EB05F22A23C59008B0438 /* CCGradientViewConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7EB05E22A23C59008B0438 /* CCGradientViewConfigurationBuilder.swift */; };
+		5FC59E5F22A63747006664CA /* Rodina-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5FC59E5E22A63747006664CA /* Rodina-Regular.otf */; };
 		5FED208122A3A8DA00CA7F70 /* CCGradientColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FED208022A3A8DA00CA7F70 /* CCGradientColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		5F082C3422A2123C00C3DDCD /* CCGradientConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGradientConfiguration.swift; sourceTree = "<group>"; };
 		5F318A9D22A3943B007D7991 /* CCColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCColors.swift; sourceTree = "<group>"; };
 		5F7EB05E22A23C59008B0438 /* CCGradientViewConfigurationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCGradientViewConfigurationBuilder.swift; sourceTree = "<group>"; };
+		5FC59E5E22A63747006664CA /* Rodina-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rodina-Regular.otf"; sourceTree = "<group>"; };
 		5FED208022A3A8DA00CA7F70 /* CCGradientColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCGradientColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 		5F082C1822A1040400C3DDCD /* CCGradient */ = {
 			isa = PBXGroup;
 			children = (
+				5FC59E5B22A6360A006664CA /* Fonts */,
 				5F082C3122A211FE00C3DDCD /* CCGradientView */,
 				5F082C1922A1040400C3DDCD /* AppDelegate.swift */,
 				5F082C1B22A1040400C3DDCD /* ViewController.swift */,
@@ -85,6 +88,14 @@
 				5F318A9D22A3943B007D7991 /* CCColors.swift */,
 			);
 			path = CCGradientView;
+			sourceTree = "<group>";
+		};
+		5FC59E5B22A6360A006664CA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5FC59E5E22A63747006664CA /* Rodina-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F082C2422A1040600C3DDCD /* LaunchScreen.storyboard in Resources */,
+				5FC59E5F22A63747006664CA /* Rodina-Regular.otf in Resources */,
 				5F082C2122A1040600C3DDCD /* Assets.xcassets in Resources */,
 				5F082C1F22A1040400C3DDCD /* Main.storyboard in Resources */,
 			);
