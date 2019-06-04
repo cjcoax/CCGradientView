@@ -89,7 +89,16 @@ let configWithColorsAndDirectionAndLocations = CCGradientConfiguration(colors: [
 ### Adding the view
 
 1. Add a UIView to your scene in storyboard, change its class to be `CCGradientView`. Depending on how you've integrated it, you might need to change `Module` to be `CCGradient`. You can add the view from the code too. Just call `CCGradientView`s `init(frame: CGRect)`. 
-2. Set `CCGradientView`'s configuration and implement configuration's method.
+2. Set `CCGradientView`'s configuration and implement the only configuration's method.
+<p>
+
+```swift
+func configurationForGradientView(_ gradientView: CCGradientView) -> CCGradientConfiguration
+```
+</p>
+
+
+Here is a complete example.
 
 ```swift
 class ViewController: UIViewController {
