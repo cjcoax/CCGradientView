@@ -198,7 +198,7 @@ You can drag and drop necessary files under `Sources` folder into your project.
 ### Cocoapods
 ```ruby
 target 'MyApp' do
-pod 'CCGradient', '~> 1.0'
+  pod 'CCGradient', '~> 1.0'
 end
 ```
 and import `CCGradient` when you want to use CCGradientView.
